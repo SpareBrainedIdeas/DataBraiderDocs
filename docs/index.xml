@@ -1,0 +1,88 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Braider Documentation – Docs</title>
+    <link>http://databraider.sparebrained.com/docs/</link>
+    <description>Recent content in Docs on Data Braider Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="http://databraider.sparebrained.com/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Basic Setup</title>
+      <link>http://databraider.sparebrained.com/docs/basicsetup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://databraider.sparebrained.com/docs/basicsetup/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Basic Usage</title>
+      <link>http://databraider.sparebrained.com/docs/basicusage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://databraider.sparebrained.com/docs/basicusage/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;first-time-setup&#34;&gt;First Time Setup&lt;/h1&gt;
+&lt;h1 id=&#34;configuration-of-endpoints&#34;&gt;Configuration of Endpoints&lt;/h1&gt;
+&lt;h2 id=&#34;key-concepts&#34;&gt;Key Concepts&lt;/h2&gt;
+&lt;p&gt;What is an Endpoint in Braider?&lt;/p&gt;
+&lt;h2 id=&#34;step-by-step-your-first-endpoint&#34;&gt;Step-By-Step: Your First Endpoint&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Advanced Setup</title>
+      <link>http://databraider.sparebrained.com/docs/advancedsetup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://databraider.sparebrained.com/docs/advancedsetup/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Advanced Usage</title>
+      <link>http://databraider.sparebrained.com/docs/advancedusage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://databraider.sparebrained.com/docs/advancedusage/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Troubleshooting</title>
+      <link>http://databraider.sparebrained.com/docs/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://databraider.sparebrained.com/docs/troubleshooting/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
