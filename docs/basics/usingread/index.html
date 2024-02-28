@@ -1,0 +1,443 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Using Read Endpoints | Data Braider Documentation</title>
+<meta name="description" content="Consuming a Read Endpoint Using Postman Postman is an API Platform/Tool, allowing you to call API endpoints. When used with Data Braider, it is used to send and receive data through the API Endpoints you have created.
+This guide will assume you understand how Postman works and know how to set up the baseline structure to be able to communicate with Data Braider. (A basic setup would include setting up the correct Environment, supplying it the Company ID, and the API URL to your Business Central Server that has Data Braider installed.">
+<meta property="og:title" content="Using Read Endpoints" />
+<meta property="og:description" content="Consuming a Read Endpoint Using Postman Postman is an API Platform/Tool, allowing you to call API endpoints. When used with Data Braider, it is used to send and receive data through the API Endpoints you have created.
+This guide will assume you understand how Postman works and know how to set up the baseline structure to be able to communicate with Data Braider. (A basic setup would include setting up the correct Environment, supplying it the Company ID, and the API URL to your Business Central Server that has Data Braider installed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/basics/usingread/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2024-02-28T12:13:01+01:00" /><meta property="og:site_name" content="Data Braider Documentation" />
+
+<meta itemprop="name" content="Using Read Endpoints">
+<meta itemprop="description" content="Consuming a Read Endpoint Using Postman Postman is an API Platform/Tool, allowing you to call API endpoints. When used with Data Braider, it is used to send and receive data through the API Endpoints you have created.
+This guide will assume you understand how Postman works and know how to set up the baseline structure to be able to communicate with Data Braider. (A basic setup would include setting up the correct Environment, supplying it the Company ID, and the API URL to your Business Central Server that has Data Braider installed.">
+<meta itemprop="dateModified" content="2024-02-28T12:13:01+01:00" />
+<meta itemprop="wordCount" content="1347">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Using Read Endpoints"/>
+<meta name="twitter:description" content="Consuming a Read Endpoint Using Postman Postman is an API Platform/Tool, allowing you to call API endpoints. When used with Data Braider, it is used to send and receive data through the API Endpoints you have created.
+This guide will assume you understand how Postman works and know how to set up the baseline structure to be able to communicate with Data Braider. (A basic setup would include setting up the correct Environment, supplying it the Company ID, and the API URL to your Business Central Server that has Data Braider installed."/>
+
+
+
+
+<link rel="preload" href="/scss/main.min.9399d7bde6f2a3e5891d6e7b6c40763c02f4a2231de5f18704afb59c9d18cd4e.css" as="style">
+<link href="/scss/main.min.9399d7bde6f2a3e5891d6e7b6c40763c02f4a2231de5f18704afb59c9d18cd4e.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar navbar-dark js-navbar-scroll">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/">
+    <img src="/images/SiteLogo.png" height="48px">
+    <span class="navbar-brand__name">Data Braider Documentation</span>
+  </a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><i class='fas fa-book'></i><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://sparebrained.com/appsource/databraider/" target="_blank" rel="noopener"><i class="fa-solid fa-shop"></i><span>Product Page</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-4 col-xl-3 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Data Braider Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgettingstarted-li">
+  <a href="/docs/gettingstarted/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgettingstarted"><span class="">Getting Started</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgettingstartedinstalling-li">
+  <a href="/docs/gettingstarted/installing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgettingstartedinstalling"><span class="">Installing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgettingstartedlicensing-li">
+  <a href="/docs/gettingstarted/licensing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgettingstartedlicensing"><span class="">Licensing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgettingstartedchangelog-li">
+  <a href="/docs/gettingstarted/changelog/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgettingstartedchangelog"><span class="">Change Log</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsbasics-li">
+  <a href="/docs/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbasics"><span class="">Basics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbasicsconfigread-li">
+  <a href="/docs/basics/configread/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbasicsconfigread"><span class="">Making Read Endpoints</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbasicsconfigwrite-li">
+  <a href="/docs/basics/configwrite/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbasicsconfigwrite"><span class="">Making Write Endpoints</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsbasicsusingread-li">
+  <a href="/docs/basics/usingread/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-docsbasicsusingread"><span class="td-sidebar-nav-active-item">Using Read Endpoints</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbasicsusingwrite-li">
+  <a href="/docs/basics/usingwrite/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbasicsusingwrite"><span class="">Using Write Endpoints</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsadvanced-li">
+  <a href="/docs/advanced/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsadvanced"><span class="">Advanced</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadvancedread-li">
+  <a href="/docs/advanced/read/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadvancedread"><span class="">Reading</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadvancedwrite-li">
+  <a href="/docs/advanced/write/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadvancedwrite"><span class="">Writing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadvancedgoodtoknow-li">
+  <a href="/docs/advanced/goodtoknow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadvancedgoodtoknow"><span class="">Good to Know</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsadditionalinformation-li">
+  <a href="/docs/additionalinformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsadditionalinformation"><span class="">Additional Information</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationsupportfieldtypes-li">
+  <a href="/docs/additionalinformation/supportfieldtypes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationsupportfieldtypes"><span class="">Supported Field Types</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationerrormessages-li">
+  <a href="/docs/additionalinformation/errormessages/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationerrormessages"><span class="">Error Messages</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationauditlogging-li">
+  <a href="/docs/additionalinformation/auditlogging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationauditlogging"><span class="">Audit Logging</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationimportexport-li">
+  <a href="/docs/additionalinformation/importexport/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationimportexport"><span class="">Import/Export</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationgenerators-li">
+  <a href="/docs/additionalinformation/generators/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationgenerators"><span class="">Generators</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationcopyendpoint-li">
+  <a href="/docs/additionalinformation/copyendpoint/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationcopyendpoint"><span class="">Copy Endpoints</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationprivacyinformation-li">
+  <a href="/docs/additionalinformation/privacyinformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationprivacyinformation"><span class="">Privacy Information</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationroadmap-li">
+  <a href="/docs/additionalinformation/roadmap/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationroadmap"><span class="">Product Roadmap</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docstroubleshooting-li">
+  <a href="/docs/troubleshooting/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docstroubleshooting"><span class="">Troubleshooting</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docstroubleshootinglogging-li">
+  <a href="/docs/troubleshooting/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docstroubleshootinglogging"><span class="">Logging</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docstroubleshootinganalyzeresults-li">
+  <a href="/docs/troubleshooting/analyzeresults/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docstroubleshootinganalyzeresults"><span class="">Analyzing Results</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docstroubleshootingtelemetry-li">
+  <a href="/docs/troubleshooting/telemetry/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docstroubleshootingtelemetry"><span class="">Telemetry</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgethelp-li">
+  <a href="/docs/gethelp/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgethelp"><span class="">Get Help</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgethelpofficialsources-li">
+  <a href="/docs/gethelp/officialsources/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgethelpofficialsources"><span class="">Microsoft Resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgethelpapihelp-li">
+  <a href="/docs/gethelp/apihelp/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgethelpapihelp"><span class="">API &amp; OAuth</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgethelpcommunitysources-li">
+  <a href="/docs/gethelp/communitysources/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgethelpcommunitysources"><span class="">Community Resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgethelpdataservice-li">
+  <a href="/docs/gethelp/dataservice/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgethelpdataservice"><span class="">Data Model Service</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsrawmaterial-li">
+  <a href="/docs/rawmaterial/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsrawmaterial"><span class=""></span></a>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          
+          <main class="col-12 col-md-8 col-xl-9 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/docs/">Data Braider Documentation</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/basics/">Basics</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Using Read Endpoints</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Using Read Endpoints</h1>
+	
+	<header class="article-meta">
+		
+  </header>
+	<h1 id="consuming-a-read-endpoint-using-postman">Consuming a Read Endpoint Using Postman</h1>
+<p>Postman is an API Platform/Tool, allowing you to call API endpoints. When used with Data Braider, it is used to send and receive data through the API Endpoints you have created.</p>
+<p>This guide will assume you understand how Postman works and know how to set up the baseline structure to be able to communicate with Data Braider.  (A basic setup would include setting up the correct Environment, supplying it the Company ID, and the API URL to your Business Central Server that has Data Braider installed.)</p>
+<p>The company ID can be received through an API call to the default engine, here is an example of such a call to a Business Central Cloud server (this URL includes the tenant ID, e6530ea3-74f0-4147-9b06-0554afd9ae53):</p>
+<p><a href="https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/companies">https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/companies</a></p>
+<p>This example API call will give you information regarding your company, including the Company ID you require to set up your Postman Environment to start using it with Data Braider.</p>
+<p>The response you will get back with look like the following:</p>
+<pre tabindex="0"><code>{
+“@odata.context”: “[https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/$metadata#companies](https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/$metadata#companies)”,
+“value”: [
+{
+“id”: “86e811fb-de3a-ed11-bbae-6045bd8e554a”,
+“systemVersion”: “21.0.46256.46853”,
+“timestamp”: 4283,
+“name”: “CRONUS USA, Inc.”,
+“displayName”: “”,
+“businessProfileId”: “”,
+“systemCreatedAt”: “2022-09-23T01:28:11.793Z”,
+“systemCreatedBy”: “00000000-0000-0000-0000-000000000001”,
+“systemModifiedAt”: “2022-09-23T01:28:11.793Z”,
+“systemModifiedBy”: “00000000-0000-0000-0000-000000000001”
+}
+</code></pre><p>As you can see above, your response data will give you the Company ID you require, along with the name of the company, so you are able to identify the correct company, in case you have multiple companies set up in your Business Central Environment.</p>
+<p>Once you have fetched the Company ID you require, your API calls to Data Braider will look like the following example:
+<a href="https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/companies(86e811fb-de3a-ed11-bbae-6045bd8e554a)/read">https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/companies(86e811fb-de3a-ed11-bbae-6045bd8e554a)/read</a></p>
+<p>As you can see, the Company ID has been supplied within the URL used to call an endpoint, make note of the ‘/read’ at the end, this reflects the use of a <strong>READ</strong> endpoint in <strong>Data Braider</strong>, used to receive information from your Business Central Environment.</p>
+<p>The <strong>READ</strong> endpoint is quite straightforward, as it will fetch whatever data you have supplied in your <strong>Data Braider</strong> API Endpoint.</p>
+<p>The <strong>READ</strong> type endpoint can be called with both <strong>Get</strong> and <strong>Post</strong>.</p>
+<h3 id="basic-get-calls-to-the-read-endpoint">Basic GET Calls to the Read Endpoint</h3>
+<p>Performing a <strong>Get</strong> call require you to extend your URL a little bit further to make it know which endpoint it is calling, the example below shows you how you extend the URL to reach a specific endpoint, <strong>Customers</strong> in this instance:
+<a href="https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/companies%2886e811fb-de3a-ed11-bbae-6045bd8e554a%29/read%28%E2%80%98CUSTOMERS%E2%80%99%29">https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/companies(86e811fb-de3a-ed11-bbae-6045bd8e554a)/read(‘CUSTOMERS’)</a></p>
+<p>When performing this <strong>Get</strong> call to your <strong>Read</strong> Endpoint in <strong>Data Braider</strong>, you would receive a response like following:</p>
+<pre tabindex="0"><code>{
+&#34;@odata.context&#34;: &#34;[https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/$metadata#companies(86e811fb-de3a-ed11-bbae-6045bd8e554a)/read/$entity](https://api.businesscentral.dynamics.com/v2.0/e6530ea3-74f0-4147-9b06-0554afd9ae53/APIBook/api/v2.0/$metadata#companies(86e811fb-de3a-ed11-bbae-6045bd8e554a)/read/$entity)&#34;,
+&#34;@odata.etag&#34;: &#34;W/\&#34;JzIwOzEyMjA2NTUxMDg1Mzg0NDQ1MDA1MTswMDsn\&#34;&#34;,
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;description&#34;: &#34;&#34;,
+&#34;endpointType&#34;: &#34;Read Only&#34;,
+&#34;outputJSONType&#34;: &#34;Hierarchy&#34;,
+&#34;jsonResult&#34;: &#34;[{\&#34;_delta\&#34;:\&#34;\&#34;,\&#34;level\&#34;:10000,\&#34;sourceTableNumber\&#34;:18,\&#34;sourceTableName\&#34;:\&#34;Customer\&#34;,\&#34;pkString\&#34;:\&#34;No.=CONST(10000)\&#34;,\&#34;sourceSystemId\&#34;:\&#34;86E811FB-DE3A-ED11-BBAE-6045BD8E554A\&#34;,\&#34;data\&#34;:{\&#34;No\&#34;:\&#34;10000\&#34;,\&#34;Name\&#34;:\&#34;Sailing Essentials\&#34;,\&#34;timestamp\&#34;:1699021023}},{\&#34;_delta\&#34;:\&#34;\&#34;,\&#34;level\&#34;:10000,\&#34;sourceTableNumber\&#34;:18,\&#34;sourceTableName\&#34;:\&#34;Customer\&#34;,\&#34;pkString\&#34;:\&#34;No.=CONST(20000)\&#34;,\&#34;sourceSystemId\&#34;:\&#34;7685C3EF-C740-EE11-BE71-6045BDC89DF0\&#34;,\&#34;data\&#34;:{\&#34;No\&#34;:\&#34;20000\&#34;,\&#34;Name\&#34;:\&#34;Camping Tools\&#34;,\&#34;timestamp\&#34;:1699020983}},{\&#34;_delta\&#34;:\&#34;\&#34;,\&#34;level\&#34;:10000,\&#34;sourceTableNumber\&#34;:18,\&#34;sourceTableName\&#34;:\&#34;Customer\&#34;,\&#34;pkString\&#34;:\&#34;No.=CONST(30000)\&#34;,\&#34;sourceSystemId\&#34;:\&#34;7A85C3EF-C740-EE11-BE71-6045BDC89DF0\&#34;,\&#34;data\&#34;:{\&#34;No\&#34;:\&#34;30000\&#34;,\&#34;Name\&#34;:\&#34;School of Fine Art\&#34;,\&#34;timestamp\&#34;:1692697413}},{\&#34;_delta\&#34;:\&#34;\&#34;,\&#34;level\&#34;:10000,\&#34;sourceTableNumber\&#34;:18,\&#34;sourceTableName\&#34;:\&#34;Customer\&#34;,\&#34;pkString\&#34;:\&#34;No.=CONST(40000)\&#34;,\&#34;sourceSystemId\&#34;:\&#34;7E85C3EF-C740-EE11-BE71-6045BDC89DF0\&#34;,\&#34;data\&#34;:{\&#34;No\&#34;:\&#34;40000\&#34;,\&#34;Name\&#34;:\&#34;Alpine Ski House\&#34;,\&#34;timestamp\&#34;:1692697413}},{\&#34;_delta\&#34;:\&#34;\&#34;,\&#34;level\&#34;:10000,\&#34;sourceTableNumber\&#34;:18,\&#34;sourceTableName\&#34;:\&#34;Customer\&#34;,\&#34;pkString\&#34;:\&#34;No.=CONST(50000)\&#34;,\&#34;sourceSystemId\&#34;:\&#34;8285C3EF-C740-EE11-BE71-6045BDC89DF0\&#34;,\&#34;data\&#34;:{\&#34;No\&#34;:\&#34;50000\&#34;,\&#34;Name\&#34;:\&#34;Relecloud\&#34;,\&#34;timestamp\&#34;:1692697413}}]&#34;,
+&#34;filterJson&#34;: &#34;&#34;,
+&#34;pageStart&#34;: 0,
+&#34;pageSize&#34;: 0
+}
+</code></pre><p>Looking at the response like this, it is quite difficult to make out what is what, but there are tools that can make this more readable (see Utilities).  The key understanding is that the <strong>jsonResult</strong> contains a stringified JSON result.  Use your preferred manner of converting this string back to a JSON.</p>
+<p>Here is an example of the first item in the above response, after making it more readable:</p>
+<pre tabindex="0"><code>{
+&#34;_delta&#34;: &#34;&#34;,
+&#34;level&#34;: 10000,
+&#34;sourceTableNumber&#34;: 18,
+&#34;sourceTableName&#34;: &#34;Customer&#34;,
+&#34;pkString&#34;: &#34;No.=CONST(10000)&#34;,
+&#34;sourceSystemId&#34;: &#34;86E811FB-DE3A-ED11-BBAE-6045BD8E554A&#34;,
+&#34;data&#34;: {
+&#34;No&#34;: &#34;10000&#34;,
+&#34;Name&#34;: &#34;Sailing Essentials&#34;,
+&#34;timestamp&#34;: 1699021023
+}
+</code></pre><p>In this example, we have set up an Endpoint in <strong>Data Braider</strong> to give the “No.” and “Name” of all customers in our Business Central environment.  This will include the timestamp (last datetime it was changed) automatically.</p>
+<h3 id="reading-data-with-filtering-via-post-calls">Reading Data with Filtering via POST calls</h3>
+<p>To extend on this functionality a little bit more, we can use Postman <strong>POST</strong> function instead of <strong>GET</strong>, this will allow us to supply a filter on our <strong>Read</strong> Endpoints in <strong>Data Braider</strong>.</p>
+<p>To set up a filter, you will need to collect some additional information, The Table Name (<strong>or</strong> Number) as well as what field Name (<strong>or</strong> Number) we wish to filter on, out of the fields that we have made available in the <strong>Data Braider</strong> Endpoint we have created.</p>
+<p>In our example, we only have Customer “No.” and “Name” available; therefore we will put a filter on the “Customer” Tables “No.” field.</p>
+<p>In Postman, we will go over to the “Body” section and supply the necessary JSON entry required to perform a <strong>Read with Filters</strong>.</p>
+<p>A Filter body entry requires some specific information to function properly:</p>
+<ol>
+<li>A <strong>Code</strong> entry line to reflect the <strong>Endpoint Call</strong> Code</li>
+<li>a <strong>FilterJson</strong> with our Json Filter code</li>
+</ol>
+<p>For our example we are targeting our <strong>Endpoint</strong> called “<strong>CUSTOMERS</strong>”, the Table connected on the endpoint, “<strong>Customer</strong>”, the Field on the Table we wish to filter on, “<strong>No.</strong>” (make note, this field has a (.) at the end and  is required for filter on this field to work), and the Filter we wish to supply, “<strong>20000</strong>” in our example:</p>
+<pre tabindex="0"><code>{
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;filterJson&#34;:&#34;[{\&#34;table\&#34;:\&#34;Customer\&#34;, \&#34;field\&#34;:\&#34;No.\&#34;, \&#34;filter\&#34;:\&#34;20000\&#34;}]&#34;
+}
+</code></pre><p>The <strong>FilterJson</strong> entry can also be adjusted to filter on the number for the Customer Table (<strong>18</strong>), as well as the Field Number for “No.” (<strong>1</strong>), and still give the same result, as in this example:</p>
+<pre tabindex="0"><code>{
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;filterJson&#34;: &#34;[{\&#34;table\&#34;:\&#34;18\&#34;,\&#34;field\&#34;:\&#34;1\&#34;,\&#34;filter\&#34;:\&#34;20000\&#34;}]&#34;
+}
+</code></pre><p>These can be found in our <strong>Data Brader API Endpoint</strong> within our Business Central instance, Open up the Endpoint in question, and locate the <strong>Endpoint Line section</strong>:</p>
+<ol>
+<li><strong>The Table Number</strong>, this can be used to substitute “Customer”, in the FilterJson code line.</li>
+<li>A clickable FlowField, click on this to open a list with all Fields included in our selected <strong>Endpoint</strong>, to locate the Field Number(s).</li>
+</ol>
+<pre tabindex="0"><code>![Alt text](/path/to/img.jpg)
+</code></pre><ol start="3">
+<li><strong>The Field Number</strong>, this can be used to substitute “No.”</li>
+</ol>
+<pre tabindex="0"><code>![Alt text](/path/to/img.jpg)
+</code></pre><p>A filter is supplied in the <strong>Body</strong> of the Postman API Call, and in addition, when using a filter, we have also lifted out the Endpoint Call Code <strong>(‘CUSTOMERS’)</strong> in this example) from the URL, and insert it into the body of code as <strong>“CUSTOMERS”</strong>.</p>
+<p>As you can see in the example below, we have lifted out the (‘Customer’) from our URL, and instead put it in our code line in the body, as well as supplied a <strong>FilterJson</strong> line with the filter parameters we require:</p>
+<pre tabindex="0"><code>![Alt text](/path/to/img.jpg)
+</code></pre><p><em>Make note, in this example, we are making use of Variables to supply the correct URL, this is shown in the example below as  <strong>{{baseurl}}</strong> and <strong>{{companyid}}</strong>, as this is frequently used for developers when working in multiple Business Central instances. This can be substituted with the complete URL instead.</em></p>
+<p>When we click “Send” we will receive a filtered <strong>Read</strong> view of our Customers, showing us only entries that contain the given filter (<strong>20000</strong>):</p>
+<pre tabindex="0"><code>{
+&#34;@odata.context&#34;: &#34;[http://docker-bc22-w1-default:7048/BC/api/sparebrained/databraider/v2.0/$metadata#companies(86e811fb-de3a-ed11-bbae-6045bd8e554a read/$entity](http://docker-bc22-w1-default:7048/BC/api/sparebrained/databraider/v2.0/$metadata#companies(86e811fb-de3a-ed11-bbae-6045bd8e554a read/$entity)&#34;,
+&#34;@odata.etag&#34;: &#34;W/\&#34;JzE5Ozg2ODIwODIyMDg0ODgwOTgxMTcxOzAwOyc=\&#34;&#34;,
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;description&#34;: &#34;&#34;,
+&#34;endpointType&#34;: &#34;Read Only&#34;,
+&#34;outputJSONType&#34;: &#34;Hierarchy&#34;,
+&#34;jsonResult&#34;: &#34;[{\&#34;_delta\&#34;:\&#34;\&#34;,\&#34;level\&#34;:10000,\&#34;sourceTableNumber\&#34;:18,\&#34;sourceTableName\&#34;:\&#34;Customer\&#34;,\&#34;pkString\&#34;:\&#34;No.=CONST(20000)\&#34;,\&#34;sourceSystemId\&#34;:\&#34;86E811FB-DE3A-ED11-BBAE-6045BD8E554A\&#34;,\&#34;data\&#34;:{\&#34;No\&#34;:\&#34;20000\&#34;,\&#34;Name\&#34;:\&#34;Camping Tools\&#34;,\&#34;timestamp\&#34;:1699020983}}]&#34;,
+&#34;filterJson&#34;: &#34;[{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;No.\&#34;,\&#34;filter\&#34;:\&#34;20000\&#34;}]&#34;,
+&#34;pageStart&#34;: 0,
+&#34;pageSize&#34;: 0
+}
+</code></pre><p>The filtering used within the endpoint reflects a filter that you would supply within your Business Central instance, i.e you can write the <strong>Filter Text</strong> containing <strong>(&lt;, &gt;, =, *, |, &amp;, ?, etc.)</strong>, as you would inside Business Central.
+Here are some examples on valid filter entries:
+Anything <strong>Starting</strong> with 20:</p>
+<pre tabindex="0"><code>{
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;filterJson&#34;:&#34;[{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;No.\&#34;,\&#34;filter\&#34;:\&#34;20*\&#34;}]&#34;
+}
+</code></pre><p>20000 <strong>OR</strong> 30000:</p>
+<pre tabindex="0"><code>{
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;filterJson&#34;:&#34;[{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;No.\&#34;,\&#34;filter\&#34;:\&#34;20000|30000\&#34;}]&#34;
+}
+</code></pre><p>Anything <strong>Bigger</strong> than 20000:</p>
+<pre tabindex="0"><code>{
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;filterJson&#34;:&#34;[{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;No.\&#34;,\&#34;filter\&#34;:\&#34;&gt;20000\&#34;}]&#34;
+}
+</code></pre><p>Anything <strong>Not Equal</strong> to 20000:</p>
+<pre tabindex="0"><code>{
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;filterJson&#34;:&#34;[{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;No.\&#34;,\&#34;filter\&#34;:\&#34;&lt;&gt;20000\&#34;}]&#34;
+}
+</code></pre><p>Anything <strong>Smaller or Equal</strong> to 20000:</p>
+<pre tabindex="0"><code>{
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;filterJson&#34;:&#34;[{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;No.\&#34;,\&#34;filter\&#34;:\&#34;&lt;=20000\&#34;}]&#34;
+}
+</code></pre><p>In addition to this, you are also able to insert multiple filters at once, as in this example, we are supplying a filter on both the <strong>No.</strong> field, as well as the <strong>Name</strong> field:</p>
+<pre tabindex="0"><code>{
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;filterJson&#34;: &#34;[{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;No.\&#34;,\&#34;filter\&#34;:\&#34;&gt;20000\&#34;},{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;Name\&#34;,\&#34;filter\&#34;:\&#34;School*\&#34;}]&#34;
+}
+</code></pre><p>Pay attention to how the filters are split up, both entries are contained within a (<strong>{</strong>) and (<strong>}</strong>), and divided by a (<strong>,</strong>).</p>
+<p>If you would happen to write an incorrect <strong>FilterJson</strong> string, you would get the following useful error as a response:</p>
+<pre tabindex="0"><code>{
+&#34;@odata.context&#34;: &#34;[http://docker-bc22-w1-default:7048/BC/api/sparebrained/databraider/v2.0/$metadata#companies(b14698e2-c740-ee11-be71-6045bdc89df0)/read/$entity](http://docker-bc22-w1-default:7048/BC/api/sparebrained/databraider/v2.0/$metadata#companies(b14698e2-c740-ee11-be71-6045bdc89df0)/read/$entity)&#34;,
+&#34;@odata.etag&#34;: &#34;W/\&#34;JzE5OzM0Mjc2MTQ5NzQwNjM5OTAyNDAxOzAwOyc=\&#34;&#34;,
+&#34;code&#34;: &#34;CUSTOMERS&#34;,
+&#34;description&#34;: &#34;&#34;,
+&#34;endpointType&#34;: &#34;Read Only&#34;,
+&#34;outputJSONType&#34;: &#34;Hierarchy&#34;,
+&#34;jsonResult&#34;: &#34;[{\&#34;Row\&#34;:0,\&#34;Column\&#34;:1,\&#34;Error\&#34;:true,\&#34;Detail\&#34;:\&#34;There were issues with the filters provided:\&#34;},{\&#34;Row\&#34;:1,\&#34;Column\&#34;:2,\&#34;Error\&#34;:true,\&#34;Detail\&#34;:\&#34;Field No not found\&#34;}]&#34;,
+&#34;filterJson&#34;: &#34;[{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;No\&#34;,\&#34;filter\&#34;:\&#34;&gt;20000\&#34;},{\&#34;table\&#34;:\&#34;Customer\&#34;,\&#34;field\&#34;:\&#34;Name\&#34;,\&#34;filter\&#34;:\&#34;School*\&#34;}]&#34;,
+&#34;pageStart&#34;: 0,
+&#34;pageSize&#34;: 0
+}
+</code></pre><p>Make note that the only thing that was wrong with the sent FilterJson string was the Field name, written as “<strong>No</strong>” instead of &ldquo;<strong>No.</strong>”, missing the required (<strong>.</strong>).</p>
+
+	<div class="text-muted mt-5 pt-3 border-top">
+  Last modified February 28, 2024: <a href="https://github.com/google/docsy-example/commit/c4f2c3e6645ae914ff7e37062b6edd019b3e2844">Merge pull request #28 from SpareBrainedIdeas/main (c4f2c3e)</a>
+</div>
+
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Mailing List" aria-label="Mailing List">
+    <a target="_blank" rel="noopener" href="https://sparebrained.com/newsletter/" aria-label="Mailing List">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/SpareBrained" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="LinkedIn" aria-label="LinkedIn">
+    <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/spare-brained-ideas-ab/" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-end text-xs-center order-sm-3">
+        
+        
+        
+<ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/SpareBrainedIdeas" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Website" aria-label="Website">
+    <a target="_blank" rel="noopener" href="https://sparebrained.com" aria-label="Website">
+      <i class="fas fa-home"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="td-footer__copyright-etc col-12 col-sm-4 text-center py-2 order-sm-2">
+        <span>&copy; 2024 Spare Brained Ideas AB |  All Rights Reserved</span>
+        <span class="ms-1"><a href="https://sparebrained.com/appsource/privacystatement/" target="_blank" rel="noopener">Privacy Policy</a></span>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <script src="/js/main.min.5f003f0f44f67457bc9ed9ed0dc55152c7f7d98fa81308468cb8b7fead157dc0.js" integrity="sha256-XwA/D0T2dFe8ntntDcVRUsf32Y&#43;oEwhGjLi3/q0VfcA=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.f724d3de49218995223b7316aa2e53e2b34bf42026bf399ebb21bb02212402d1.js" integrity="sha256-9yTT3kkhiZUiO3MWqi5T4rNL9CAmvzmeuyG7AiEkAtE=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

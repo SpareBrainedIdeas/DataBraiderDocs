@@ -1,0 +1,77 @@
+---
+title: "SBI Data Braider Support and Docs"
+linkTitle: "Data Braider Support and Docs"
+description: "The Support and Documentation site for the Spare Brained Ideas App for Microsoft Dynamics 365 Business Central"
+images: ["images/og-image-fission.png"]
+---
+
+<div class="hero">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-xl-7 col-lg-6 col-md-6 hero-section-mobile">
+        <h1 class="hero-title">
+          A No-Code API Factory<br />
+          Microsoft Dynamics 365 Business Central
+        </h1>
+        <img
+          class="img-fluid hero-banner show-mobile-big"
+          src="/images/SBIDataBraider_472x354_trans.png"
+          alt-text="Teamwork Graphic"
+        />
+        <br />
+        <a href="" class="navbar-brand">  <!-- YouTube Link -->
+            <i class="fab fa-youtube"></i>&nbsp;&nbsp; Watch the 30 second Overview
+        </a>
+      </div>
+
+  <div class="col-xl-5 col-lg-6 col-md-6 show-desktop-big">
+        <img
+          class="img-fluid hero-banner"
+          src="/images/SBIDataBraider_472x354_trans.png"
+          alt-text="Teamwork Graphic"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="body-container push-up">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 center-text" style="margin-bottom: 50px">
+        <h2 class="section-title">Benefits</h2>
+      </div>
+
+  <div class="col-lg-4">
+        <div class="card-shadow">
+          <h2 class="section-text-bold"><i class="fas fa-laugh-beam"></i></h2>
+          <h4 class="section-text-bold">Easy To Use</h4>
+          <p class="section-text">
+            Not only is configuration simple (and portable), but working with the resultant API is a breeze.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card-shadow">
+          <h2><i class="fas fa-wallet"></i></h2>
+          <h4 class="section-text-bold">Reduce Costs</h4>
+          <p class="section-text">
+            While we all appreciate the value of development efforts, by being able to configure your own API endpoints,
+            you no longer have to spend time and resources on exposing data for use.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card-shadow">
+          <h2><i class="fas fa-rocket"></i></h2>
+          <h4 class="section-text-bold">Rapid</h4>
+          <p class="section-text">
+            No matter how good the development team is that you're working with, there is usually some waiting time, even
+            for adding just one more field. With Data Braider, it can be as fast as "check a box".
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>

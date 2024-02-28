@@ -1,0 +1,302 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Import/Export | Data Braider Documentation</title>
+<meta name="description" content="This process is one that requires hours of work in a standard API endpoint. However, Data Braider allows you to complete this process through a few clicks on buttons added.
+The “Export” button added by Data Braider exports all the selected endpoints.
+You can also Import the information into a different scenario on BC.
+Another advantage of this feature is that you can edit the information even after you import it into the desired location.">
+<meta property="og:title" content="Import/Export" />
+<meta property="og:description" content="This process is one that requires hours of work in a standard API endpoint. However, Data Braider allows you to complete this process through a few clicks on buttons added.
+The “Export” button added by Data Braider exports all the selected endpoints.
+You can also Import the information into a different scenario on BC.
+Another advantage of this feature is that you can edit the information even after you import it into the desired location." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/additionalinformation/importexport/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2024-02-28T12:13:01+01:00" /><meta property="og:site_name" content="Data Braider Documentation" />
+
+<meta itemprop="name" content="Import/Export">
+<meta itemprop="description" content="This process is one that requires hours of work in a standard API endpoint. However, Data Braider allows you to complete this process through a few clicks on buttons added.
+The “Export” button added by Data Braider exports all the selected endpoints.
+You can also Import the information into a different scenario on BC.
+Another advantage of this feature is that you can edit the information even after you import it into the desired location.">
+<meta itemprop="dateModified" content="2024-02-28T12:13:01+01:00" />
+<meta itemprop="wordCount" content="75">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Import/Export"/>
+<meta name="twitter:description" content="This process is one that requires hours of work in a standard API endpoint. However, Data Braider allows you to complete this process through a few clicks on buttons added.
+The “Export” button added by Data Braider exports all the selected endpoints.
+You can also Import the information into a different scenario on BC.
+Another advantage of this feature is that you can edit the information even after you import it into the desired location."/>
+
+
+
+
+<link rel="preload" href="/scss/main.min.9399d7bde6f2a3e5891d6e7b6c40763c02f4a2231de5f18704afb59c9d18cd4e.css" as="style">
+<link href="/scss/main.min.9399d7bde6f2a3e5891d6e7b6c40763c02f4a2231de5f18704afb59c9d18cd4e.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar navbar-dark js-navbar-scroll">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/">
+    <img src="/images/SiteLogo.png" height="48px">
+    <span class="navbar-brand__name">Data Braider Documentation</span>
+  </a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><i class='fas fa-book'></i><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://sparebrained.com/appsource/databraider/" target="_blank" rel="noopener"><i class="fa-solid fa-shop"></i><span>Product Page</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-4 col-xl-3 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Data Braider Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgettingstarted-li">
+  <a href="/docs/gettingstarted/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgettingstarted"><span class="">Getting Started</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgettingstartedinstalling-li">
+  <a href="/docs/gettingstarted/installing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgettingstartedinstalling"><span class="">Installing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgettingstartedlicensing-li">
+  <a href="/docs/gettingstarted/licensing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgettingstartedlicensing"><span class="">Licensing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgettingstartedchangelog-li">
+  <a href="/docs/gettingstarted/changelog/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgettingstartedchangelog"><span class="">Change Log</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsbasics-li">
+  <a href="/docs/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbasics"><span class="">Basics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbasicsconfigread-li">
+  <a href="/docs/basics/configread/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbasicsconfigread"><span class="">Making Read Endpoints</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbasicsconfigwrite-li">
+  <a href="/docs/basics/configwrite/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbasicsconfigwrite"><span class="">Making Write Endpoints</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbasicsusingread-li">
+  <a href="/docs/basics/usingread/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbasicsusingread"><span class="">Using Read Endpoints</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbasicsusingwrite-li">
+  <a href="/docs/basics/usingwrite/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbasicsusingwrite"><span class="">Using Write Endpoints</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsadvanced-li">
+  <a href="/docs/advanced/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsadvanced"><span class="">Advanced</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadvancedread-li">
+  <a href="/docs/advanced/read/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadvancedread"><span class="">Reading</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadvancedwrite-li">
+  <a href="/docs/advanced/write/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadvancedwrite"><span class="">Writing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadvancedgoodtoknow-li">
+  <a href="/docs/advanced/goodtoknow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadvancedgoodtoknow"><span class="">Good to Know</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsadditionalinformation-li">
+  <a href="/docs/additionalinformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsadditionalinformation"><span class="">Additional Information</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationsupportfieldtypes-li">
+  <a href="/docs/additionalinformation/supportfieldtypes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationsupportfieldtypes"><span class="">Supported Field Types</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationerrormessages-li">
+  <a href="/docs/additionalinformation/errormessages/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationerrormessages"><span class="">Error Messages</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationauditlogging-li">
+  <a href="/docs/additionalinformation/auditlogging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationauditlogging"><span class="">Audit Logging</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsadditionalinformationimportexport-li">
+  <a href="/docs/additionalinformation/importexport/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationimportexport"><span class="td-sidebar-nav-active-item">Import/Export</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationgenerators-li">
+  <a href="/docs/additionalinformation/generators/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationgenerators"><span class="">Generators</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationcopyendpoint-li">
+  <a href="/docs/additionalinformation/copyendpoint/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationcopyendpoint"><span class="">Copy Endpoints</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationprivacyinformation-li">
+  <a href="/docs/additionalinformation/privacyinformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationprivacyinformation"><span class="">Privacy Information</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsadditionalinformationroadmap-li">
+  <a href="/docs/additionalinformation/roadmap/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsadditionalinformationroadmap"><span class="">Product Roadmap</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docstroubleshooting-li">
+  <a href="/docs/troubleshooting/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docstroubleshooting"><span class="">Troubleshooting</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docstroubleshootinglogging-li">
+  <a href="/docs/troubleshooting/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docstroubleshootinglogging"><span class="">Logging</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docstroubleshootinganalyzeresults-li">
+  <a href="/docs/troubleshooting/analyzeresults/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docstroubleshootinganalyzeresults"><span class="">Analyzing Results</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docstroubleshootingtelemetry-li">
+  <a href="/docs/troubleshooting/telemetry/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docstroubleshootingtelemetry"><span class="">Telemetry</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgethelp-li">
+  <a href="/docs/gethelp/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgethelp"><span class="">Get Help</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgethelpofficialsources-li">
+  <a href="/docs/gethelp/officialsources/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgethelpofficialsources"><span class="">Microsoft Resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgethelpapihelp-li">
+  <a href="/docs/gethelp/apihelp/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgethelpapihelp"><span class="">API &amp; OAuth</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgethelpcommunitysources-li">
+  <a href="/docs/gethelp/communitysources/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgethelpcommunitysources"><span class="">Community Resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgethelpdataservice-li">
+  <a href="/docs/gethelp/dataservice/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgethelpdataservice"><span class="">Data Model Service</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsrawmaterial-li">
+  <a href="/docs/rawmaterial/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsrawmaterial"><span class=""></span></a>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          
+          <main class="col-12 col-md-8 col-xl-9 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/docs/">Data Braider Documentation</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/additionalinformation/">Additional Information</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Import/Export</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Import/Export</h1>
+	
+	<header class="article-meta">
+		
+  </header>
+	<p>This process is one that requires hours of work in a standard API endpoint. However, Data Braider allows you to complete this process through a few clicks on buttons added.</p>
+<p>The “Export” button added by Data Braider exports all the selected endpoints.</p>
+<p>You can also Import the information into a different scenario on BC.</p>
+<p>Another advantage of this feature is that you can edit the information even after you import it into the desired location.</p>
+
+	<div class="text-muted mt-5 pt-3 border-top">
+  Last modified February 28, 2024: <a href="https://github.com/google/docsy-example/commit/c4f2c3e6645ae914ff7e37062b6edd019b3e2844">Merge pull request #28 from SpareBrainedIdeas/main (c4f2c3e)</a>
+</div>
+
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Mailing List" aria-label="Mailing List">
+    <a target="_blank" rel="noopener" href="https://sparebrained.com/newsletter/" aria-label="Mailing List">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/SpareBrained" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="LinkedIn" aria-label="LinkedIn">
+    <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/spare-brained-ideas-ab/" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-end text-xs-center order-sm-3">
+        
+        
+        
+<ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/SpareBrainedIdeas" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Website" aria-label="Website">
+    <a target="_blank" rel="noopener" href="https://sparebrained.com" aria-label="Website">
+      <i class="fas fa-home"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="td-footer__copyright-etc col-12 col-sm-4 text-center py-2 order-sm-2">
+        <span>&copy; 2024 Spare Brained Ideas AB |  All Rights Reserved</span>
+        <span class="ms-1"><a href="https://sparebrained.com/appsource/privacystatement/" target="_blank" rel="noopener">Privacy Policy</a></span>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <script src="/js/main.min.5f003f0f44f67457bc9ed9ed0dc55152c7f7d98fa81308468cb8b7fead157dc0.js" integrity="sha256-XwA/D0T2dFe8ntntDcVRUsf32Y&#43;oEwhGjLi3/q0VfcA=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.f724d3de49218995223b7316aa2e53e2b34bf42026bf399ebb21bb02212402d1.js" integrity="sha256-9yTT3kkhiZUiO3MWqi5T4rNL9CAmvzmeuyG7AiEkAtE=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>
